@@ -1,0 +1,77 @@
+.app-nav-notification-tray {
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 15px;
+  width: 400px;
+  height: 550px;
+  position: absolute;
+  top: 33px;
+  right: 0px;
+}
+
+.notification-item-image {
+  width: 144px;
+  height: 81px;
+  flex-wrap: nowrap;
+  border-radius: 8px;
+}
+
+.notification-items {
+  flex-grow: 1;
+  overflow-y: scroll;
+}
+.notification-item {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.notification-item-name {
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  flex-grow: 1;
+  color: #000;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.notification-delete-icon {
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.notification-utility-container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.notification-purchase-button {
+  background-color: #ff902b;
+  border-radius: 50px;
+}
+
+.shopping-list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.96px;
+}

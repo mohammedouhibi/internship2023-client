@@ -1,0 +1,56 @@
+.Popularproduct-box {
+  height: 54px;
+  width: 313px;
+}
+
+.Popularproduct-box .Popularproduct-section-title {
+  height: 54px;
+  left: 0;
+  top: 0;
+  width: 315px;
+}
+
+.Popularproduct-box .Popularproduct-overlap-group {
+  height: 54px;
+  position: relative;
+  width: 313px;
+}
+
+.Popularproduct-box .Popularproduct-ext-wrapper {
+  color: #000000;
+  font-family: "Poppins-SemiBold", Helvetica;
+  font-size: 32px;
+  font-weight: 600;
+  height: 54px;
+  left: 0;
+  letter-spacing: 1.28px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  width: 313px;
+}
+
+.Popularproduct-box .Popularproduct-rectangle {
+   
+    border-bottom: 4px solid #ff902a;
+    display: inline-block;
+    line-height: 1.3;
+
+}
+
+.card-list-container{
+  padding-top: 38px;
+display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+grid-auto-rows: auto;
+
+grid-gap: 1rem;
+}
+
+
+.popular-product-container{
+  position: relative;
+  top: -300px;
+}

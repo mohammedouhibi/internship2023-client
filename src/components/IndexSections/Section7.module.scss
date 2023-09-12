@@ -1,0 +1,112 @@
+@use "../utils" as *;
+@use "../global" as *;
+
+$color_type_0: rgb(126, 125, 122);
+$color_type_1: rgb(255, 255, 255);
+
+$bg_color_type_0: rgb(255, 255, 255);
+$bg_color_type_1: rgb(47, 33, 5);
+
+$border_radius_type_0: 22px 22px 22px 22px;
+$border_radius_type_1: 24px 24px 24px 24px;
+$border_radius_type_2: 27px 27px 27px 27px;
+
+$font_type_0: 600 32px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_1: 600 16px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_2: 600 14px/1.5 "Poppins", Helvetica, Arial, serif;
+
+.section7 {
+  display: grid;
+  flex-grow: 1;
+  position: relative;
+}
+.section71 {
+  background: var(--src) center center / cover no-repeat;
+  border-radius: $border_radius_type_1;
+  display: grid;
+  flex-grow: 1;
+  margin: 85px auto 120px;
+  position: relative;
+  width: 81.25%;
+}
+.flex_col14 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 26px 0px;
+  margin: 133px auto 131px;
+  position: relative;
+  width: 53.33%;
+}
+.title11 {
+  align-items: center;
+  color: $color_type_1;
+  display: flex;
+  font: $font_type_0;
+  justify-content: center;
+  letter-spacing: 1.18px;
+  text-align: center;
+  @include lg {
+    font-size: 28px;
+  }
+  @include md {
+    font-size: 24px;
+  }
+  @include sm {
+    font-size: 20px;
+  }
+  @include tn {
+    font-size: 12px;
+  }
+}
+.content_box13 {
+  background-color: $bg_color_type_0;
+  border-radius: $border_radius_type_2;
+  display: grid;
+  margin: 0px auto;
+  position: relative;
+  width: 77.88%;
+}
+.flex_row13 {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  margin: 5px 5px 5px 16px;
+  position: relative;
+}
+.highlight71 {
+  align-items: center;
+  color: $color_type_0;
+  display: flex;
+  flex: 0 0 136px;
+  font: $font_type_1;
+  justify-content: center;
+  letter-spacing: 0.64px;
+  margin: 9px 0px 11px;
+  text-align: center;
+  @include lg {
+    font-size: 12px;
+  }
+}
+.flex_row13__spacer {
+  flex: 0 1 191px;
+}
+.box11 {
+  background-color: $bg_color_type_1;
+  border-radius: $border_radius_type_0;
+  display: grid;
+  filter: drop-shadow(0px 4px 32px rgba(223, 195, 123, 0.247));
+  flex: 0 0 138px;
+  position: relative;
+}
+.text2 {
+  align-items: center;
+  color: $color_type_1;
+  display: flex;
+  flex-grow: 1;
+  font: $font_type_2;
+  justify-content: center;
+  letter-spacing: 0px;
+  margin: 12px 32px 11px;
+  text-align: center;
+}

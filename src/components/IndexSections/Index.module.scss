@@ -1,0 +1,24 @@
+@use "../utils" as *;
+@use "../global" as *;
+
+$bg_color_type_0: rgb(255, 255, 255);
+
+.root {
+  background-color: $bg_color_type_0;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+}
+.flex_col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+}
+.group1 {
+  display: grid;
+  position: relative;
+}
+.flex_col__cell {
+  display: grid;
+}

@@ -1,0 +1,139 @@
+.how-to-container{
+  height: 65vh;
+  position: relative;
+  top: -60px;
+  
+}
+
+.how-to-box {
+  width: 500px;
+  height: 48px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.how-to-text {
+  color: #000;
+font-family: Poppins;
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: 1.28px;
+}
+
+.how-to-rectangle{
+  display: inline-block;
+  position: relative;
+}
+
+.how-to-rectangle::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: orange;
+  border-radius: 12px;
+}
+
+.coffee-cup1 {
+  width: 131.382px;
+  height: 135.145px;
+  flex-shrink: 0;
+}
+
+.pointing-hand {
+  width: 79.433px;
+  height: 81.708px;
+  flex-shrink: 0;
+}
+
+
+
+.box1-header {
+  color: var(--secondary, #2f2105);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.96px;
+}
+
+.box1-content {
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.72px;
+}
+
+.image1-container {
+  width: 159px;
+  height: 159px;
+  flex-shrink: 0;
+  position: relative;
+  display: inline-block;
+  border-style: groove;
+  z-index: 300;
+}
+
+.image1-container .coffee-cup1 {
+  width: 131.382px;
+  height: 135.145px;
+  top: 0;
+  left: 0;
+  position: absolute; 
+  flex-shrink: 0;
+}
+
+.image1-container .pointing-hand1 {
+  width: 79.433px;
+  height: 81.708px;
+  bottom: 0;
+
+  right: 0;
+  position: absolute;
+  flex-shrink: 0;
+}
+
+.box1 {
+  display: flex;
+width: 370px;
+height: 290px;
+padding: 16px 24px;
+flex-direction: column;
+align-items: center;
+gap: 17px;
+flex-shrink: 0;
+}
+
+.food-truck{
+  width: 159px;
+height: 159px;
+flex-shrink: 0;
+}
+
+.box1-text-container{
+  
+  display: flex;
+flex-direction: column;
+  align-items: center;
+}
+
+.coffee-cup2{
+  width: 159px;
+height: 159px;
+flex-shrink: 0;
+}
+
+.frames-container{
+  justify-content: space-between;
+  padding-top: 37px;
+}

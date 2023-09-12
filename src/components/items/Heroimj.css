@@ -1,0 +1,10 @@
+.box {
+    height: 416px;
+    width: 527px;
+  }
+  
+  .box .img-hero {
+    object-fit:cover;
+    flex-wrap: nowrap;
+  }
+  

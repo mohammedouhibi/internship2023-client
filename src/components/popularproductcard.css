@@ -1,0 +1,118 @@
+.productcardtext {
+  color: var(--secondary, #2f2105);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.96px;
+}
+.productbodycontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card {
+  width: 355px;
+  height: 385px;
+  fill: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.7) 100%
+  );
+  backdrop-filter: blur(2px);
+
+  padding: 24px;
+}
+
+.product-card-container {
+  flex-shrink: 0;
+  fill: #fff;
+}
+
+.product-card-img {
+  width: 307px;
+  height: 226px;
+  border-radius: 12px;
+}
+
+.hot-button {
+  display: flex;
+  width: 64px;
+  height: 32px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid var(--primary, #ff902b);
+  cursor: pointer;
+}
+
+.cold-button {
+  display: flex;
+  width: 64px;
+  height: 32px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid #ffd28f;
+  cursor: pointer;
+}
+.hot-button-text {
+  color: var(--primary, #ff902b);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+.cold-button-text {
+  color: #ffd28f;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+.card-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card-cart-filled {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background-color: #ff902b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.product-card-cart-empty {
+  display: flex;
+  width: 43px;
+  margin-left: 8px;
+  height: 43px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 64px;
+  border: 2px solid #ff902a;
+  background: #fff;
+  cursor: pointer;
+}

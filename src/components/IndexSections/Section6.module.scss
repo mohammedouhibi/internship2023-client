@@ -1,0 +1,123 @@
+@use "../utils" as *;
+@use "../global" as *;
+
+$color_type_0: rgb(126, 125, 122);
+$color_type_1: rgb(47, 33, 5);
+
+$bg_color_type_0: rgb(255, 203, 124);
+
+$border_radius_type_0: 8px 8px 8px 8px;
+
+$font_type_0: 400 18px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_1: 500 18px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_2: 400 14px/1.5 "Poppins", Helvetica, Arial, serif;
+
+.section6 {
+  display: grid;
+  flex-grow: 1;
+  position: relative;
+}
+.group2 {
+  display: grid;
+  flex-grow: 1;
+  margin: 86px 19.31% 35px 0.21%;
+  min-height: 482px;
+  position: relative;
+  width: 80.49%;
+}
+.cover2 {
+  bottom: 0px;
+  left: 0%;
+  min-height: 482px;
+  object-fit: cover;
+  position: absolute;
+  top: 0px;
+  width: 941px;
+}
+.flex_row12 {
+  align-items: center;
+  bottom: 102px;
+  display: flex;
+  position: absolute;
+  right: 0%;
+  top: 100px;
+  width: 1027px;
+}
+.flex_col12 {
+  display: flex;
+  flex: 0 1 413px;
+  flex-direction: column;
+  gap: 16px 0px;
+  margin: 68px 0px 67px;
+  position: relative;
+}
+.highlight7 {
+  align-items: center;
+  color: $color_type_0;
+  display: flex;
+  font: $font_type_0;
+  letter-spacing: 0px;
+  margin: 0px auto 0px 0px;
+  width: 85.23%;
+  @include sm {
+    font-size: 12px;
+  }
+}
+.flex_row12__spacer {
+  flex: 0 1 60px;
+}
+.group3 {
+  display: grid;
+  flex: 0 1 257px;
+  min-height: 280px;
+  position: relative;
+}
+.image7 {
+  bottom: 0px;
+  left: 0%;
+  min-height: 280px;
+  object-fit: cover;
+  outline: 6px solid rgba(255, 211, 144, 0.619);
+  position: absolute;
+  top: 0px;
+  width: 204px;
+}
+.box10 {
+  background-color: $bg_color_type_0;
+  border-radius: $border_radius_type_0;
+  bottom: 22px;
+  display: grid;
+  min-height: 86px;
+  outline: 6px solid rgba(255, 211, 144, 0.619);
+  position: absolute;
+  right: 0%;
+  top: 172px;
+  width: 226px;
+}
+.flex_col13 {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 8px 1px 9px 12px;
+  position: relative;
+}
+.highlight61 {
+  align-items: center;
+  color: $color_type_1;
+  display: flex;
+  font: $font_type_1;
+  letter-spacing: 0.72px;
+  @include sm {
+    font-size: 12px;
+  }
+}
+.paragraph1 {
+  align-items: center;
+  color: $color_type_1;
+  display: flex;
+  font: $font_type_2;
+  letter-spacing: 0.56px;
+}
+.flex_row12__spacer1 {
+  flex: 0 1 40px;
+}

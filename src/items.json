@@ -1,0 +1,62 @@
+[
+    {
+        "name":"Vanilla Latte",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Vanilla Latte.jpg"
+    },
+    {
+        "name":"Espresso",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Espresso.png"
+    },
+    {
+        "name":"Hazelnut Latte",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Hazelnut Latte.jpg"
+    },
+
+
+    
+    {
+        "name":"Sandwich",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Sandwich.jpg"
+    },
+    {
+        "name":"Hot Milk",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Hot Milk.jpg"
+    },
+    {
+        "name":"Coffe Ice Cream",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Coffe Ice Cream.png"
+    },
+
+
+    
+    {
+        "name":"Cappucino",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Cappucino.jpg"
+    },
+    {
+        "name":"Moccacinno",
+        "rating":4.8,
+        "reviews": "12 k",
+        "imgName": "Moccacinno.jpg"
+    },
+    {
+        "name":"Waffle Ice Crem",
+        "rating":4.9,
+        "reviews": "12 k",
+        "imgName": "Waffle Ice Crem.jpg"
+    }
+]

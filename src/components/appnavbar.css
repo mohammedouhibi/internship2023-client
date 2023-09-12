@@ -1,0 +1,99 @@
+.app-nav {
+  width: 1161px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding-top: 36px;
+}
+
+.app-nav-logo {
+  width: 150px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.app-nav-links {
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  width: 322px;
+  height: 27px;
+  flex-shrink: 0;
+}
+
+.app-nav-link-orange {
+  color: var(--primary, #ff902b);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.app-nav-link {
+  color: var(--primary, #000);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.app-nav-utils {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.app-nav-cart-icon-container {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.app-nav-cart-icon {
+  width: 25.053px;
+  height: 24px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 4px;
+  left: 2.67px;
+  
+  cursor: pointer;
+}
+
+.app-nav-cart-notification {
+  width: 10px;
+  height: 10px;
+  background-color: #ff902b;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 4px;
+  right: 0;
+}
+
+.login-button{
+  background:#2F2105 ;
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+}
+
+.profile-image{
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
+  
+}

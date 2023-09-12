@@ -1,0 +1,112 @@
+@use "../utils" as *;
+@use "../global" as *;
+
+$color_type_0: rgb(0, 0, 0);
+$color_type_1: rgb(126, 125, 122);
+$color_type_2: rgb(244, 174, 38);
+
+$bg_color_type_0: rgb(47, 33, 5);
+
+$border_radius_type_0: 19px 19px 19px 19px;
+
+$font_type_0: 600 24px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_1: 400 18px/1.5 "Poppins", Helvetica, Arial, serif;
+$font_type_2: 700 12px/1.5 "Poppins", Helvetica, Arial, serif;
+
+.section4 {
+  display: grid;
+  flex-grow: 1;
+  position: relative;
+}
+.group {
+  display: grid;
+  flex-grow: 1;
+  margin: 62px 12.85% 94px 16.46%;
+  min-height: 509px;
+  position: relative;
+  width: 70.69%;
+}
+.decorator1 {
+  bottom: -63px;
+  left: -235px;
+  object-fit: cover;
+  position: absolute;
+  right: -188px;
+  top: 88px;
+  width: calc(100% - -235px - -188px);
+}
+.flex_row10 {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+}
+.flex_row10__cell {
+  display: grid;
+  flex: 0 0 370px;
+}
+.image4 {
+  filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.156));
+  flex-grow: 1;
+  min-height: 509px;
+  object-fit: cover;
+  width: 100%;
+}
+.flex_row10__spacer {
+  flex: 0 1 170px;
+}
+.flex_col10 {
+  display: flex;
+  flex: 0 1 478px;
+  flex-direction: column;
+  margin: 172px 0px 21px;
+  position: relative;
+}
+.medium_title21 {
+  align-items: center;
+  color: $color_type_0;
+  display: flex;
+  font: $font_type_0;
+  letter-spacing: 0.96px;
+  margin: 24px auto 0px 0px;
+  width: 72.8%;
+  @include lg {
+    font-size: 20px;
+  }
+  @include sm {
+    font-size: 16px;
+  }
+  @include tn {
+    font-size: 12px;
+  }
+}
+.highlight6 {
+  align-items: center;
+  color: $color_type_1;
+  display: flex;
+  font: $font_type_1;
+  letter-spacing: 0.72px;
+  margin: 15px 0px 0px;
+  @include sm {
+    font-size: 12px;
+  }
+}
+.box8 {
+  background-color: $bg_color_type_0;
+  border-radius: $border_radius_type_0;
+  display: grid;
+  margin: 32px 336px 0px 0px;
+  position: relative;
+  width: 142px;
+}
+.info2 {
+  align-items: center;
+  color: $color_type_2;
+  display: flex;
+  flex-grow: 1;
+  font: $font_type_2;
+  justify-content: center;
+  letter-spacing: 0px;
+  margin: 10px 24px;
+  text-align: center;
+}
