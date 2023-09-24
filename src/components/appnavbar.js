@@ -14,21 +14,27 @@ import "./appnavbar.css";
 import Notificationtray from "./items/notificationtray/notificationtray";
 import OutsideClickHandler from "react-outside-click-handler";
 import LoginForm from "./loginform/loginform";
+import ProfileTray from "./items/profile-tray/profile-tray";
+import { Toaster } from "react-hot-toast";
 
 export default function Appnavbar(props) {
+  const [isProfileTray, setIsProfileTray] = useState(false);
   const [modal, setModal] = useState(false);
   const toggleLogin = () => setModal(!modal);
 
-  const [isNotificationTray, setIsNotificationTray] = useState(false);
-
   const toggleNotificationTray = () =>
-    setIsNotificationTray(!isNotificationTray);
+    props.setIsNotificationTray(!props.isNotificationTray);
+
+
+  const logout = () => props.useLocalStorage.setToken("");
+
   return (
     <Container>
       <nav color="transparent" className="app-nav">
         <img
           className="app-nav-logo"
           src={require("./assets/logo-coffe.png")}
+          onClick={() => (window.location.href = "/")}
         />
 
         <div className="app-nav-links">
@@ -46,10 +52,10 @@ export default function Appnavbar(props) {
         <div className="app-nav-utils">
           <Search></Search>
           <OutsideClickHandler
-            onOutsideClick={() => setIsNotificationTray(false)}
+            onOutsideClick={() => props.setIsNotificationTray(false)}
           >
             <div className="app-nav-cart-icon-container">
-              {isNotificationTray && (
+              {props.isNotificationTray && (
                 <Notificationtray
                   shoppingList={props.shoppingList}
                   onItemDeSelect={props.onItemDeSelect}
@@ -74,15 +80,29 @@ export default function Appnavbar(props) {
             >
               login
             </Button>
-          ) : (
-            props.currentUser.image !== "" ? (
+          ) : props.currentUser.image !== "" ? (
+            <OutsideClickHandler onOutsideClick={() => setIsProfileTray(false)}>
+            <div className="pfp-container">
               <img
                 className="profile-image"
                 src={props.currentUser.image}
-                onClick={() => props.useLocalStorage.setToken("")}
+                alt="profileImage"
+                onClick={()=>setIsProfileTray(!isProfileTray)}
               />
-            ): (<img className=""
-            src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg" /> )
+
+              {isProfileTray && (<ProfileTray
+              username={()=>(props.currentUser.name+" " + props.currentUser.lastName)}
+              logout={logout}
+              ></ProfileTray>)}
+            </div>
+            </OutsideClickHandler>
+          ) : (
+            <div className="pfp-container">
+              <img
+                className="profile-image"
+                src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+              />
+            </div>
           )}
         </div>
       </nav>
@@ -92,6 +112,7 @@ export default function Appnavbar(props) {
         toggle={toggleLogin}
         useLocalStorage={props.useLocalStorage}
       ></LoginForm>
+      
     </Container>
   );
 }

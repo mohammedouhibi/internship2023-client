@@ -5,11 +5,10 @@ import { Button, Card } from "reactstrap";
 import { Trash } from "react-bootstrap-icons";
 
 export default function Notificationtray(props) {
-  const deselect = props.onItemDeSelect;
-
+  
 
   return (
-    <div className="app-nav-notification-tray" >
+    <div className="app-nav-notification-tray shadow" >
       {props.shoppingList.length === 0 ? (
         
         <div className="shopping-list-empty">
@@ -23,16 +22,19 @@ export default function Notificationtray(props) {
                 <div className="notification-item">
                   <img
                     className="notification-item-image"
-                    src={require("./../../assets/" + item.imgName)}
+                    src={require("./../../assets/" + item.product.image)}
                   />
-                  <div className="notification-item-name">{item.name}</div>
-                  <Trash className="notification-delete-icon" onClick={()=> deselect(item)}></Trash>
+                  <div className="notification-item-name">{item.product.name+" x"+item.quantity}</div>
+                  <Trash className="notification-delete-icon" onClick={()=> props.onItemDeSelect(item)}></Trash>
                 </div>
               </Card> 
             ))}
           </div>
           <div className="notification-utility-container">
-            <Button className="notification-purchase-button">
+            <Button className="notification-purchase-button" onClick={()=>
+              window.location.href = "/order"
+
+            }>
               Complete order
             </Button>
           </div>

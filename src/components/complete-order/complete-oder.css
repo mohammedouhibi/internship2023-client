@@ -1,0 +1,136 @@
+
+.order-page{
+  position: relative;
+  background-color: #F6EBDA;
+  height: fit-content;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+
+.complete-oder-container{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    overflow: hidden;
+    width: 100vw;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+
+.order-box{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    border-radius: 12px;
+
+}
+
+.order-product-image{
+    flex-wrap: nowrap;
+    width: 100px;
+    height: 70px;
+}
+
+.order-description-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.order-steps{
+background-color: white;
+padding: 0;
+}
+.order-steps-list{
+    display: flex;
+justify-content: space-around;
+list-style: none;
+padding:0;
+}
+
+
+.order-steps-list-item{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 70px;
+    border-bottom: black 1px solid;
+  }
+
+  .order-steps-list-item.active{
+    background-color: #a3a4a4;
+    color: white;
+  }
+
+  .order-steps-list-item.activated{
+    background-color: #d2d4d4;
+    color: white;
+    cursor: pointer;
+  }
+
+
+  .order-steps-list-item.seperated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1.5px; 
+    width: 3px;
+    height: 100%;
+    background: #f4ae26;
+  }
+
+  .order-total-container{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+  }
+
+.order-summary-box{
+  background-color: white;
+  padding: 40px;
+}
+
+  .order-summary-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: black 1px solid;
+  }
+
+  .order-table-box{
+    background-color: white;
+    padding: 25px;
+  }
+
+  .steps-button{
+    background-color: #ff902b;
+    border-radius: 50px;
+  }
+
+
+  .order-total{
+    border-bottom: black 1px solid;
+  }
+
+  .order-summary-header{
+    padding-bottom: 25px;
+  }
+
+  .order-summary-item-list{
+    padding-bottom: 25px;
+  }
+
+.order-summary-delivery-details{
+  list-style:disc;
+  gap: 12px;
+
+}

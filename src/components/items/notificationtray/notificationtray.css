@@ -9,6 +9,7 @@
   position: absolute;
   top: 33px;
   right: 0px;
+  z-index: 1000;
 }
 
 .notification-item-image {

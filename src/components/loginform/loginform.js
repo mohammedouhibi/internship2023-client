@@ -11,6 +11,7 @@ import {
 } from "reactstrap";
 import "./loginform.css";
 import RegistrationForm from "../registrationform/registration-form";
+import toast from "react-hot-toast";
 const LoginForm = (props) => {
   const [modal, setModal] = useState(false);
   const toggleRegistration = () => setModal(!modal);
@@ -27,24 +28,49 @@ const LoginForm = (props) => {
     });
   };
 
+  const loginPromise = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const response = await fetch("https://localhost:7289/Users/login", {
+          method: "POST", 
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+        });
+        
+        const data = await response.text(); 
+        
+        if (response.ok) {
+          props.useLocalStorage.setToken(data);
+          localStorage.setItem("token", data);
+          props.toggle();
+          resolve();  
+        } else {
+          reject();
+        }
+        
+      } catch (err) {
+        reject(err);
+      }
+    });
+  }
+  
+  // To use:
+  
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    toast.promise(
+      loginPromise(),
+       {
+         loading: 'Logging in...',
+         success: <b>Welcome!</b>,
+         error: <b>Incorrect email or password.</b>,
+       }
+     );
    
-      const response = await fetch("https://localhost:7289/Users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.text();
-      if (response.ok) {
-        props.useLocalStorage.setToken(data);
-        localStorage.setItem("token", data);
-        props.toggle()
-    }
+     
   };
 
  

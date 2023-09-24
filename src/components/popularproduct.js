@@ -3,15 +3,14 @@ import "./popularproduct.css";
 import { Container, Row } from "reactstrap";
 import Popularproductcard from "./popularproductcard";
 export default function Popularproduct(props) {
-  const onItemSelect = props.onItemSelect;
-  const onItemDeSelect = props.onItemDeSelect;
-  const [Products,SetProducts] = useState(props.products)
-  const checkInclusion = (item) =>{
-    return props.shoppingList.includes(item);
-  }
+  const checkInclusion = (item) => {
+    return (
+      props.shoppingList.filter(
+        (product) => product.productId === item.productId
+      ).length > 0
+    );
+  };
 
-
-  
   return (
     <Container className="popular-product-container">
       <Row>
@@ -20,16 +19,43 @@ export default function Popularproduct(props) {
         </h1>
       </Row>
       <Container className="card-list-container">
-        {Products.map((product) => (
+        {props.products.map((product) => (
           <Popularproductcard
+          updateCartItem={(temperature,quantity ) => {
+            const ci = props.shoppingList.filter(
+              (p) => p.productId === product.productId
+            )[0]
+            ci.temperature = temperature
+            ci.quantity = quantity
+            props.updateCartItem(ci)
+          }}
+            temperature={() => {
+              if (checkInclusion(product)) {
+                return props.shoppingList.filter(
+                  (p) => p.productId === product.productId
+                )[0].temperature;
+              }else{return undefined}
+            }}
+            quantity={() => {
+              if (checkInclusion(product)) {
+                console.log(product.name+props.shoppingList.filter(
+                  (p) => p.productId === product.productId
+                )[0].quantity)
+                return props.shoppingList.filter(
+                  (p) => p.productId === product.productId
+                )[0].quantity;
+              }else{return undefined}
+            }}
             product={product}
-            onItemSelect={(item) => {
-              onItemSelect(item);
-            }}
+            onItemSelect={props.onItemSelect}
             onItemDeSelect={(item) => {
-              onItemDeSelect(item);
+              props.onItemDeSelect(
+                props.shoppingList.filter(
+                  (product) => product.productId === item.productId
+                )[0]
+              );
             }}
-            checkInclusion={checkInclusion(product)}
+            checkInclusion={()=>checkInclusion(product)}
           ></Popularproductcard>
         ))}
       </Container>

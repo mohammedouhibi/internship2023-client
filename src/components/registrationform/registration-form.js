@@ -12,6 +12,7 @@ import {
 import "./registration-form.css";
 
 import * as filestack from "filestack-js";
+import toast from "react-hot-toast";
 
 const RegistrationForm = (props) => {
   const [formData, setFormData] = useState({
@@ -96,29 +97,45 @@ const RegistrationForm = (props) => {
     );
   };
 
+
+  const registrationPromise = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        if(validateForm()) {
+          const res = await fetch("https://localhost:7289/Users/register", {
+            method: "POST",
+            headers: { "Content-Type": "application/json"},
+            body: JSON.stringify(formData)
+          });
+          
+          if(res.ok) {
+            props.toggle();
+            resolve();
+          } else {
+            const errorMsg = await res.text();
+        reject({message: errorMsg}); 
+          }
+        }
+      } catch (error) {
+        reject(error);
+      }
+    });
+  }
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    toast.promise(
+      registrationPromise(),
+      {
+        loading: 'Registering...',
+        success: <b>Registered!</b>,
+        error: (error)=>(<b>{error.message}</b> )
+      }
+    );
+  
 
-    try {
-      if (validateForm())
-      {await fetch("https://localhost:7289/Users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      }).then((res) => {
-        if (res.ok) {
-          props.toggle();
-        }
-      });}
-    } catch (error) {
-      alert(error);
-    }
-
-    // Save JWT token to localStorage
-    //localStorage.setItem('token', data.token);
-    //alert(data.token)
+  
   };
 
   return (

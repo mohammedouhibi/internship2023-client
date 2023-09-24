@@ -1,0 +1,38 @@
+.profile-tray-box{
+    position: absolute;
+    top: 33px;
+    right: 0px;
+    z-index: 1001;
+    border-radius:15px ;
+    background-color: white;
+    width: 150px;
+    padding: 16px 4px 12px 4px;
+}
+
+
+.profile-tray-header{
+    padding-bottom: 12px;
+}
+
+.profile-tray-link-list{
+    border-bottom: black 1px solid ;
+    border-image: linear-gradient(to right , black 80%, transparent 100%);
+border-image-slice: 1;
+}
+
+.profile-tray-link{
+    cursor: pointer;
+    
+}
+
+
+.profile-tray-link:hover{
+    background: linear-gradient(to bottom, #f5f5f5, #eaeaea);
+}
+
+.profile-tray-logout {
+margin-top: 10px;
+    border-bottom: black 1px solid;
+    border-image: linear-gradient(to right , black 65%, transparent 100%);
+border-image-slice: 1;
+}

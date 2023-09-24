@@ -7,12 +7,18 @@
   align-items: center;
   position: absolute;
   padding-top: 36px;
+  z-index: 1000;
 }
 
+
+.pfp-container{
+  position: relative;
+}
 .app-nav-logo {
   width: 150px;
   height: 30px;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .app-nav-links {

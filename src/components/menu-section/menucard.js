@@ -5,23 +5,43 @@ import { Col, Row } from "reactstrap";
 export default function Menucard(props) {
 
   
-  const [product] = useState(props.product) 
 
   const onItemSelect = props.onItemSelect
 
-
+  function transformNumber(num) {
+    let order = Math.floor(Math.log10(num) / 3);
+    let suffix;
+    switch(order) {
+      case 0:
+        suffix = '';
+        break;
+      case 1: 
+        suffix = 'k';
+        break;
+      case 2:
+        suffix = 'M';
+        break;
+      case 3:
+        suffix = 'B';
+        break;
+      default:
+        suffix = '';
+    }
+    let scaled = num / Math.pow(10, order * 3);
+    return scaled.toString()+ ' ' + suffix;
+  }
 
 
   return (
     <div className="menu-card-container shadow">
       <div className="menu-card-image-container">
         <img
-          src={require("../assets/"+product.imgName)}
+          src={require("../assets/"+props.product.image)}
           className="menu-card-image"
         />
         <div className="rating-pill-outline">
           <div className="rating-pill">
-            <div className="rating">{product.rating}</div>
+            <div className="rating">{props.product.rating}</div>
             <img
               className="rating-icon"
               src={require("../assets/akar-icons_star.png")}
@@ -32,8 +52,8 @@ export default function Menucard(props) {
       <div className="card-content-container ">
       <Row>
         <div className="productbodycontainer">
-          <div className="productcardtext">{product.name}</div>
-          <div className="productcardtext">{product.reviews}</div>
+          <div className="productcardtext">{props.product.name}</div>
+          <div className="productcardtext">{transformNumber(props.product.numberSold)}</div>
         </div>
       </Row>
       <Row className="card-bottom-row">
