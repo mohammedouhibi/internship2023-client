@@ -41,7 +41,7 @@ export default function Appnavbar(props) {
           <a className="app-nav-link-orange  " href="#">
             About us
           </a>
-          <a className="app-nav-link  " href="#">
+          <a className="app-nav-link  " href="#"  onClick={() => (window.location.href = "/products")}>
             Our Product
           </a>
           <a className="app-nav-link " href="#">
