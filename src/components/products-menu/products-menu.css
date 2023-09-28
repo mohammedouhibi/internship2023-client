@@ -1,0 +1,125 @@
+.products-menu-page{
+    position: relative;
+    background-color: #F6EBDA;
+    height: fit-content;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.products-menu-container{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    overflow: hidden;
+    width: 100vw;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.products-menu-box{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.products-menu-header{
+    font-family: Poppins;
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding-left: 25px;
+}
+
+.products-menu-body{
+    background-color: white;
+    gap: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.products-menu-filter-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 25px;
+    border-bottom: black 1px solid;
+    border-image: radial-gradient(black 80%, transparent 100%);
+    border-image-slice: 1;
+}
+
+.products-menu-filter-search-input{
+    width: 300px;
+}
+
+.products-menu-filter-sort-input{
+    width: 200px;
+}
+
+.products-menu-filter-inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    
+}
+
+.products-menu-filter-button-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 4;
+}
+
+.products-menu-filter-button{
+    
+    background-color: #ff902b;
+    border-radius: 50px;
+}
+
+.products-menu-products-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 25px;
+    background-color: white;
+    padding-top: 35px;
+}
+
+.products-menu-pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+}
+
+.products-menu-pagination-arrow-left{
+    border: solid #ff902b;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  cursor: pointer;
+}
+
+.products-menu-pagination-arrow-right{
+    border: solid #ff902b;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.products-menu-pagination-index{
+    font-family: Poppins;
+    
+}

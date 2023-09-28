@@ -101,7 +101,13 @@ export default function Appnavbar(props) {
               <img
                 className="profile-image"
                 src="https://static.vecteezy.com/system/resources/previews/005/544/718/non_2x/profile-icon-design-free-vector.jpg"
+                
+                onClick={()=>setIsProfileTray(!isProfileTray)}
               />
+              {isProfileTray && (<ProfileTray
+              username={()=>(props.currentUser.name+" " + props.currentUser.lastName)}
+              logout={logout}
+              ></ProfileTray>)}
             </div>
           )}
         </div>

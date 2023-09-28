@@ -13,15 +13,15 @@
 }
 
 .notification-item-image {
-  width: 144px;
-  height: 81px;
+  width: 100px;
+  height: 65px;
   flex-wrap: nowrap;
   border-radius: 8px;
 }
 
 .notification-items {
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .notification-item {
   padding: 4px;

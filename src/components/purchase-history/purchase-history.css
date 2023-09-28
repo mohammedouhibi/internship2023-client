@@ -8,15 +8,16 @@
 .purchase-history-box{
     display: flex;
     flex-direction: column;
-    background-color: white;
     gap: 15px;
     width: 100%;
     padding : 20px;
+    
 }
 
 
 .purchase-history-container{
     padding-top: 150px;
+    
     padding-bottom: 150px;
 }
 .purchase-history-accordion-header-box{
@@ -74,6 +75,8 @@ flex-grow: 1;
     min-height: 65px;
     width: 100%;
     border-radius: 12px;
+    
+    background-color: rgb(245, 226, 192);
 }
 
 
@@ -83,14 +86,27 @@ flex-grow: 1;
     transition: 
     max-height 0.5s ease-in-out, 
     max-height 0s step-end 0s; 
+    
 
 }
 
 .purchase-history-accordion-content.active{
+    
+    background-color: rgb(250, 235, 210);
     overflow-y: auto;
     max-height: 400px;
     transition: 
     max-height 0.5s ease-in-out;
+}
+
+.purchase-history-cart-table thead tr th
+{
+    
+    background-color: rgb(250, 235, 210);
+}
+.purchase-history-cart-table tbody tr td{
+    
+    background-color: rgb(250, 235, 210);
 }
 
 .purchase-history-cart-item-image{

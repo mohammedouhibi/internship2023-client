@@ -82,6 +82,7 @@ export default function CompleteOder(props) {
   const handleSubmit = async () => {
     let CartItemIds = [];
     props.shoppingList.forEach((item) => {
+      console.log('cart item#' + item.cartItemId);
       CartItemIds.push(item.cartItemId);
     });
     setFormData({ ...formData, cartItemIds: CartItemIds });
@@ -99,10 +100,22 @@ export default function CompleteOder(props) {
         }
       );
 
-      if (response.ok) {
-        alert("success");
-      }
+      const toastPromise = new Promise((resolve, reject) => {
+        if (response.ok) {
+          
+          resolve();
+        } else {
+          reject();
+        }
+      });
+
+      toast.promise(toastPromise, {
+        loading: "Creating order...",
+        success: "Order created!",
+        error: "something went wrong",
+      })
     } catch (error) {
+      toast.error("Something went wrong");
       console.error(error);
     }
   };
@@ -140,10 +153,10 @@ export default function CompleteOder(props) {
   }, [props.shoppingList]);
 
   const handleSteps = () => {
-    if (step === 1) {
-      toast.success('Successfully toasted!')
+    if (step === 1) {if(props.shoppingList.length > 0){
       getOrderTemplate();
-      setStep(step + 1);
+      setStep(step + 1);}
+      else toast.error("Please add items to cart");
     } else if (step === 2) {
       if (validateForm()) {
         setStep(step + 1);

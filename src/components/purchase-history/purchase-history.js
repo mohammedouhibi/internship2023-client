@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./purchase-history.css";
 import { Container, Table } from "reactstrap";
 import fetchWithAuth from "../../fetch-interceptor";
+import { Rating } from "@mui/material";
+import toast from "react-hot-toast";
 
 export default function PurchaseHistory(props) {
   const [purchaseHistory, setPurchaseHistory] = useState([]);
@@ -32,6 +34,39 @@ export default function PurchaseHistory(props) {
       setActive(index);
     }
   };
+  const Rate = async (cartItemId,value) => {
+    const params = new URLSearchParams();
+    params.append("cartItemId", cartItemId);
+    params.append("rating", value);
+    const res = await fetchWithAuth(
+      "https://localhost:7289/Orders/rate-cart-item?" + params.toString(),
+      {
+        method: "POST",
+      }
+    )
+
+
+
+    if(res.ok){
+      getPurchaseHistory();
+    }
+    let err="";
+    const resPromise = new Promise(async (resolve, reject) => {
+      if(res.ok){
+      resolve(res);}
+      else{
+        //get error text
+        err = await res.text();
+        reject(err);
+      }
+    });
+    toast.promise(resPromise, {
+      loading: "Processing...",
+      success: "Thank you for rating our product!",
+      error: (error)=>((value !== null && cartItemId !== null) ? (<b>{error}</b>):(<b>Something went wrong.</b>) )
+    })
+
+  };
 
   function formatDate(dateString) {
     const date = new Date(dateString);
@@ -57,7 +92,7 @@ export default function PurchaseHistory(props) {
     <div className="purchase-history-page">
       <Container className="purchase-history-container">
         <div className="purchase-history-box">
-          {purchaseHistory.map((order, index) => (
+          {purchaseHistory.map((order, index) => order.cartItems.length > 0 && (
             <div className="purchase-history-accordion shadow">
               <div
                 className={`purchase-history-accordion-header  ${
@@ -90,10 +125,10 @@ export default function PurchaseHistory(props) {
                   active === index ? "active" : ""
                 }`}
               >
-                <Table cellPadding={"4px"}  hover >
-                  <thead>
+                <Table cellPadding={"4px"}  hover  className="purchase-history-cart-table" >
+                  <thead >
                     <tr>
-                      <th>Image</th>
+                      <th>Product</th>
                       <th>Product ID</th>
                       <th>Quantity</th>
                       <th>Unit Price</th>
@@ -102,21 +137,24 @@ export default function PurchaseHistory(props) {
                     </tr>
                   </thead>
 
-                  <tbody>
+                  <tbody className="purchase-history-cart-table-content">
                     {order.cartItems.map((item) => (
-                      <tr key={item.productId}>
+                      <tr key={item.productId} >
                         <td>
                           <img
                             src={require(`../assets/${item.product.image}`)}
                             className="purchase-history-cart-item-image"
                           />
+                          {item.product.name}
                         </td>
                         <td>{item.productId}</td>
                         <td>{item.quantity}</td>
                         <td>{item.product.price}$</td>
                         <td>{(item.product.price*item.quantity).toFixed(2)}</td>
                         <td>
-                        
+                        <Rating name="read-only" value={item.rating} onChange={(event, value)=>{
+                          Rate(item.cartItemId,value)
+                        }} />
                           </td>
                       </tr>
                     ))}

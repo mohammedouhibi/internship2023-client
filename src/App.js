@@ -22,6 +22,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import ProductsMenu from "./components/products-menu/products-menu";
 
 function App() {
   const [shopItems, setShopItems] = useState([]);
@@ -143,6 +144,12 @@ const onLogout = () => {
 
       if (res && res.ok) {
         const data = await res.json();
+        //data.Role is a string, with many roles split by "," example ("Delivery,Admin,User"). 
+        //if it contains the role Admin, redirect to "localhost:3001/Auth?jwt="+token
+
+        if( data.claims.split(",").includes("Admin")) {
+         // window.location.href = "https://localhost:3001/Auth?jwt="+token;
+        }
         setCurrentUser(data);
         return data;
       } else {
@@ -265,6 +272,17 @@ const onLogout = () => {
         element={
           <PurchaseHistory />
         } />
+        <Route
+          path="/products"
+          element={
+            <ProductsMenu
+            updateCartItem={updateCartItem}
+                  shoppingList={shoppingList}
+                  products={shopItems}
+                  onItemSelect={addToShoppingList}
+                  onItemDeSelect={removeFromShoppingList}
+              ></ProductsMenu>
+          } />
       </Routes>
     </BrowserRouter>
     </div>
